@@ -250,7 +250,7 @@ in
       description = dockerComposeRef "network_mode";
     };
     service.networks = mkOption {
-      type = nullOr (listOf types.str);
+      type = nullOr (either (listOf types.str) (attrsOf types.raw));
       default = null;
       description = dockerComposeRef "networks";
     };
